@@ -1,0 +1,26 @@
+abstract class AppStrings {
+  static const String appName = 'Car Wash App',
+      getStarted = 'Get Started',
+      experienceThe = 'Experience the',
+      ultimateCarWash = 'Ultimate Car Wash',
+      signIn = 'Sign in',
+      signUp = 'Sign up',
+      login = 'Login',
+      fullName = 'Full Name',
+      email = 'E-mail',
+      password = 'Password',
+      repeatPassword = 'Repeat Password',
+      forgetPassword = 'Forget Password ?',
+      orLoginWith = 'or login with',
+      signIntoYourAccount = 'Sign in to your account',
+      welcomeBack = 'Welcome Back!',
+      dontHaveAccount = 'Don\'t have an account?',
+      alreadyHaveAccount = 'Already have an account?',
+      createAccount = 'Create Account',
+      joinUsWeWashCarsYouRetax = 'Join us now!!! We Wash Cars. You Retax',
+      selectMethodToLogIn = 'Select method to log in:',
+      beforewestart = 'Before we start!',
+      selectYourCarType =
+          'Select your car type so we can adjust our prices for you!',
+      save = 'Save';
+}

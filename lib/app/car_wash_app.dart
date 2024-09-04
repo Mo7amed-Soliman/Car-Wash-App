@@ -1,3 +1,6 @@
+import 'package:car_wash_app/core/helpers/utils/app_strings.dart';
+import 'package:car_wash_app/core/routes/app_router.dart';
+import 'package:car_wash_app/core/routes/routes.dart';
 import 'package:flutter/material.dart';
 
 class CarWashApp extends StatelessWidget {
@@ -6,17 +9,11 @@ class CarWashApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Car Wash App',
+    return MaterialApp(
+      title: AppStrings.appName,
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Center(
-          child: Text(
-            'Car Wash App',
-            style: TextStyle(fontSize: 30),
-          ),
-        ),
-      ),
+      routes: getRoutes,
+      initialRoute: Routes.initialRoute,
     );
   }
 }
