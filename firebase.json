@@ -1,0 +1,25 @@
+{
+    "flutter": {
+        "platforms": {
+            "android": {
+                "default": {
+                    "projectId": "car-wash-dc7ff",
+                    "appId": "1:640272351869:android:e5a15a0f580d308aff6714",
+                    "fileOutput": "android/app/google-services.json"
+                }
+            },
+            "dart": {
+                "lib/firebase_options.dart": {
+                    "projectId": "car-wash-dc7ff",
+                    "configurations": {
+                        "android": "1:640272351869:android:e5a15a0f580d308aff6714",
+                        "ios": "1:640272351869:ios:89a5c723c8bab4d4ff6714",
+                        "macos": "1:640272351869:ios:89a5c723c8bab4d4ff6714",
+                        "web": "1:640272351869:web:8d6cd733cff00a08ff6714",
+                        "windows": "1:640272351869:web:a0a46e0b6f2c0a30ff6714"
+                    }
+                }
+            }
+        }
+    }
+}
