@@ -1,6 +1,7 @@
 import 'package:car_wash_app/core/helpers/utils/app_strings.dart';
 import 'package:car_wash_app/core/routes/app_router.dart';
 import 'package:car_wash_app/core/routes/routes.dart';
+import 'package:car_wash_app/core/theming/themeing.dart';
 import 'package:flutter/material.dart';
 
 class CarWashApp extends StatelessWidget {
@@ -12,6 +13,7 @@ class CarWashApp extends StatelessWidget {
     return MaterialApp(
       title: AppStrings.appName,
       debugShowCheckedModeBanner: false,
+      theme: lightTheme,
       routes: getRoutes,
       initialRoute: Routes.initialRoute,
     );
