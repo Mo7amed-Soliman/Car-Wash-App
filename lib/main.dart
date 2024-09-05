@@ -5,6 +5,7 @@ import 'package:car_wash_app/core/services/dependency_injection.dart';
 import 'package:car_wash_app/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() async {
@@ -16,14 +17,20 @@ void main() async {
 
   //! set up Bloc Observers
   Bloc.observer = AppBlocObservers();
+
   //! set up Get It
   setupGetIt();
 
-  Future.wait([
-    //! Here The Initialize of cache => sharedPreferences
-    getIt<CacheHelper>().init(),
-  ]);
+  //! Here The Initialize of cache => sharedPreferences
+  await getIt<CacheHelper>().init();
 
+  //! system ui
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.dark,
+    ),
+  );
   //! run app
   runApp(const CarWashApp());
 }

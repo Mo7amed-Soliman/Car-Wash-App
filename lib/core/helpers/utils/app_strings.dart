@@ -1,8 +1,9 @@
 abstract class AppStrings {
   static const String appName = 'Car Wash App',
       getStarted = 'Get Started',
-      experienceThe = 'Experience the',
-      ultimateCarWash = 'Ultimate Car Wash',
+      welcomeTo = 'Welcome to Car Wash!',
+      experienceThe = 'Experience the ',
+      ultimateCarWash = '\nUltimate Car Wash',
       signIn = 'Sign in',
       signUp = 'Sign up',
       login = 'Login',
