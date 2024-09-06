@@ -6,7 +6,7 @@ import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginRepoImpl extends LoginRepo {
-  RemoteDateSourceImpel remoteDateSourceImpel;
+  LoginRemoteDateSourceImpel remoteDateSourceImpel;
   LoginRepoImpl({required this.remoteDateSourceImpel});
   @override
   Future<Either<Failuer, void>> login(
