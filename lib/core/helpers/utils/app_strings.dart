@@ -13,9 +13,9 @@ abstract class AppStrings {
       repeatPassword = 'Repeat Password',
       forgetPassword = 'Forget Password ?',
       orLoginWith = 'or login with',
-      signIntoYourAccount = 'Sign in to your account',
+      signIntoYourAccount = 'Sign in to your \naccount',
       welcomeBack = 'Welcome Back!',
-      dontHaveAccount = 'Don\'t have an account?',
+      dontHaveAccount = 'Don\'t have an account?  ',
       alreadyHaveAccount = 'Already have an account?',
       createAccount = 'Create Account',
       joinUsWeWashCarsYouRetax = 'Join us now!!! We Wash Cars. You Retax',
@@ -23,5 +23,8 @@ abstract class AppStrings {
       beforewestart = 'Before we start!',
       selectYourCarType =
           'Select your car type so we can adjust our prices for you!',
-      save = 'Save';
+      save = 'Save',
+      hintTextEmail = 'someone@example.com',
+      hintTextPassword = '****************',
+      rememberMe = 'Remember me';
 }
