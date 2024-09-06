@@ -3,3 +3,33 @@ abstract class Failuer {
 
   Failuer({required this.errMessage});
 }
+
+class FireBaseFailuer extends Failuer {
+  FireBaseFailuer({required super.errMessage});
+
+  factory FireBaseFailuer.fromCode(String code) {
+    switch (code) {
+      case 'invalid-email':
+        return FireBaseFailuer(
+          errMessage: 'The email is badly formatted.',
+        );
+      case 'user-disabled':
+        return FireBaseFailuer(
+          errMessage: 'The user account has been disabled.',
+        );
+      case 'user-not-found':
+        return FireBaseFailuer(
+          errMessage: 'There is no user corresponding to this email.',
+        );
+      case 'wrong-password':
+        return FireBaseFailuer(
+          errMessage:
+              'The password is invalid or the user does not have a password.',
+        );
+      default:
+        return FireBaseFailuer(
+          errMessage: 'Something went wrong, please try again later.',
+        );
+    }
+  }
+}
