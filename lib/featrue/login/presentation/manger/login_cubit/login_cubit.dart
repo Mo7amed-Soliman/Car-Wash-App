@@ -17,7 +17,7 @@ class LoginCubit extends Cubit<LoginState> {
   String? email, password;
 
   //? login
-  Future<void> login() async {
+  Future<void> loginWithEmailAndPassword() async {
     emit(LoginLoading());
     var result = await loginUseCase.call(
       LoginEntity(email: email!, password: password!),
@@ -33,10 +33,24 @@ class LoginCubit extends Cubit<LoginState> {
   Future<void> validate() async {
     if (formKey.currentState!.validate()) {
       formKey.currentState!.save();
-      await login();
+      await loginWithEmailAndPassword();
     } else {
       autovalidateMode = AutovalidateMode.always;
       emit(ValidateState());
     }
+  }
+
+  //? password visibility
+  bool passwordVisibility = true;
+
+  void changePasswordVisibility() {
+    passwordVisibility = !passwordVisibility;
+    emit(ChangePasswordVisibilityState());
+  }
+
+  Icon getSuffixIcon() {
+    return passwordVisibility
+        ? const Icon(Icons.visibility)
+        : const Icon(Icons.visibility_off);
   }
 }

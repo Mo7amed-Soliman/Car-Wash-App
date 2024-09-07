@@ -22,13 +22,13 @@ class CustomCard extends StatelessWidget {
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(
-            horizontal: 55,
+            horizontal: 50,
             vertical: 10,
           ),
           child: SvgPicture.asset(
             icon,
-            height: 45,
-            width: 45,
+            height: 40,
+            width: 40,
           ),
         ),
       ),

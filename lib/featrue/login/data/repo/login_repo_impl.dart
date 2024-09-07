@@ -6,13 +6,16 @@ import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginRepoImpl extends LoginRepo {
-  LoginRemoteDateSourceImpel remoteDateSourceImpel;
-  LoginRepoImpl({required this.remoteDateSourceImpel});
+  LoginRemoteDateSourceImpl remoteDateSourceImpel;
+  LoginRepoImpl(this.remoteDateSourceImpel);
   @override
-  Future<Either<Failuer, void>> login(
-      {required LoginEntity loginEntity}) async {
+  Future<Either<Failuer, void>> loginWithEmailAndPassword({
+    required LoginEntity loginEntity,
+  }) async {
     try {
-      remoteDateSourceImpel.login(loginEntity: loginEntity);
+      await remoteDateSourceImpel.loginWithEmailAndPassword(
+        loginEntity: loginEntity,
+      );
       return const Right(null);
     } on FirebaseAuthException catch (e) {
       return left(FireBaseFailuer.fromCode(e.code));

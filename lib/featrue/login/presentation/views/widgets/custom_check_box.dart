@@ -9,7 +9,7 @@ class CustomCheckbox extends StatefulWidget {
 }
 
 class _CustomCheckboxState extends State<CustomCheckbox> {
-  bool value = true;
+  bool value = false;
   @override
   Widget build(BuildContext context) {
     return Checkbox(
@@ -26,8 +26,12 @@ class _CustomCheckboxState extends State<CustomCheckbox> {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(5.0),
       ),
-      value: false,
-      onChanged: (newValue) {},
+      value: value,
+      onChanged: (newValue) {
+        setState(() {
+          value = newValue!;
+        });
+      },
     );
   }
 }

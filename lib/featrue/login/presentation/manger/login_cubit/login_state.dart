@@ -16,3 +16,6 @@ final class LoginFailed extends LoginState {
 
 
 final class ValidateState extends LoginState {}
+
+
+final class ChangePasswordVisibilityState extends LoginState {}

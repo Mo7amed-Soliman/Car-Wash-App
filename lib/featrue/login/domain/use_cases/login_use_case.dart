@@ -11,6 +11,6 @@ class LoginUseCase extends UseCase<void, LoginEntity> {
 
   @override
   Future<Either<Failuer, void>> call(LoginEntity params) async {
-    return await loginRepo.login(loginEntity: params);
+    return await loginRepo.loginWithEmailAndPassword(loginEntity: params);
   }
 }

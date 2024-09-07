@@ -7,7 +7,7 @@ import 'package:gap/gap.dart';
 class MyTextFormField extends StatelessWidget {
   const MyTextFormField({
     super.key,
-    required this.controller,
+    this.controller,
     required this.hintText,
     this.obscureText,
     this.prefixIcon,
@@ -17,7 +17,7 @@ class MyTextFormField extends StatelessWidget {
     this.onSaved,
     this.text,
   });
-  final TextEditingController controller;
+  final TextEditingController? controller;
   final String hintText;
   final String? text;
   final Widget? prefixIcon;

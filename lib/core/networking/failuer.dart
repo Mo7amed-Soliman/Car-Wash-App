@@ -13,9 +13,10 @@ class FireBaseFailuer extends Failuer {
         return FireBaseFailuer(
           errMessage: 'The email is badly formatted.',
         );
-      case 'user-disabled':
+      case 'invalid-credential':
         return FireBaseFailuer(
-          errMessage: 'The user account has been disabled.',
+          errMessage:
+              'The password is invalid or the user does not have a password.',
         );
       case 'user-not-found':
         return FireBaseFailuer(
