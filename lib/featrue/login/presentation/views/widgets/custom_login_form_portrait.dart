@@ -27,10 +27,11 @@ class _CustomLoginFormPortraitState extends State<CustomLoginFormPortrait> {
       padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
       child: BlocConsumer<LoginCubit, LoginState>(
         listener: (context, state) {
-          if (state is LoginSuccess) {
+          if (state is LoginWithEmailAndPasswordSuccess ||
+              state is LoginWithGoogleSuccess) {
             showToast(message: 'Login Success , Welcome Back');
           }
-          if (state is LoginFailed) {
+          if (state is LoginWithEmailAndPasswordFailed) {
             showToast(message: state.errMessage, color: Colors.red[400]);
           }
         },
@@ -68,9 +69,8 @@ class _CustomLoginFormPortraitState extends State<CustomLoginFormPortrait> {
                 const RememberMeAndForgotPassword(),
                 const Gap(12),
                 CustomBottom(
-                  isLoding: state is LoginLoading,
+                  isLoding: state is LoginWithEmailAndPasswordLoading,
                   text: AppStrings.login,
-                  
                   onPressed: () async {
                     await context.read<LoginCubit>().validate();
                   },

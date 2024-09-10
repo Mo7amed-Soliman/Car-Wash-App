@@ -5,4 +5,6 @@ import 'package:dartz/dartz.dart';
 abstract class LoginRepo {
   Future<Either<Failuer, void>> loginWithEmailAndPassword(
       {required LoginEntity loginEntity});
+
+  Future<Either<Failuer, void>> loginWithGoogle();
 }

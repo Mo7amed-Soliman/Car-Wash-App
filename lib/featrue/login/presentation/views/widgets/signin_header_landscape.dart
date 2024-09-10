@@ -13,8 +13,8 @@ class SignInHeaderLandscape extends StatelessWidget {
     double height = MediaQuery.sizeOf(context).height;
     double width = MediaQuery.sizeOf(context).width;
     return Container(
-      height: height * 1,
       width: width * 0.45,
+      height: height,
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.only(
           bottomRight: Radius.circular(defaultRadius * 2),
@@ -26,6 +26,7 @@ class SignInHeaderLandscape extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Gap(30),
             ContentOfSiginHeader(height: height),

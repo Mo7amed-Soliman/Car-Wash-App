@@ -2,8 +2,10 @@ import 'package:car_wash_app/core/helpers/utils/app_assets.dart';
 import 'package:car_wash_app/core/helpers/utils/app_colors.dart';
 import 'package:car_wash_app/core/helpers/utils/app_strings.dart';
 import 'package:car_wash_app/core/helpers/utils/app_text_styles.dart';
+import 'package:car_wash_app/featrue/login/presentation/manger/login_cubit/login_cubit.dart';
 import 'package:car_wash_app/featrue/login/presentation/views/widgets/custom_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 
 class CustomOrLoginWithWidget extends StatelessWidget {
@@ -40,17 +42,11 @@ class CustomOrLoginWithWidget extends StatelessWidget {
           ],
         ),
         const Gap(12),
-        const Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            CustomCard(
-              icon: AppAssets.google,
-            ),
-            Gap(10),
-            CustomCard(
-              icon: AppAssets.fecbook,
-            ),
-          ],
+        CustomCard(
+          icon: AppAssets.google,
+          onTap: () {
+            BlocProvider.of<LoginCubit>(context).loginWithGoogle();
+          },
         ),
       ],
     );

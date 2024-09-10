@@ -5,6 +5,7 @@ import 'package:car_wash_app/core/widgets/account_status_widget.dart';
 import 'package:car_wash_app/core/widgets/custom_bottom.dart';
 import 'package:car_wash_app/core/widgets/my_text_form_field.dart';
 import 'package:car_wash_app/featrue/login/presentation/manger/login_cubit/login_cubit.dart';
+import 'package:car_wash_app/featrue/login/presentation/views/widgets/remember_me_and_forgot_password.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
@@ -19,10 +20,11 @@ class CustomFormLandscape extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
       child: BlocConsumer<LoginCubit, LoginState>(
         listener: (context, state) {
-          if (state is LoginSuccess) {
+          if (state is LoginWithEmailAndPasswordSuccess ||
+              state is LoginWithGoogleSuccess) {
             showToast(message: 'Login Success , Welcome Back');
           }
-          if (state is LoginFailed) {
+          if (state is LoginWithEmailAndPasswordFailed) {
             showToast(message: state.errMessage, color: Colors.red[400]);
           }
         },
@@ -57,9 +59,11 @@ class CustomFormLandscape extends StatelessWidget {
                     icon: context.read<LoginCubit>().getSuffixIcon(),
                   ),
                 ),
-                Gap(height * 0.16),
+                const Gap(12),
+                const RememberMeAndForgotPassword(),
+                const Gap(12),
                 CustomBottom(
-                  isLoding: state is LoginLoading,
+                  isLoding: state is LoginWithEmailAndPasswordLoading,
                   text: AppStrings.login,
                   onPressed: () async {
                     await context.read<LoginCubit>().validate();

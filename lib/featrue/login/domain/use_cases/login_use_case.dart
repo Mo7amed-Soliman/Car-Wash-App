@@ -4,10 +4,10 @@ import 'package:car_wash_app/featrue/login/domain/entitys/login_entity.dart';
 import 'package:car_wash_app/featrue/login/domain/repos/login_repo.dart';
 import 'package:dartz/dartz.dart';
 
-class LoginUseCase extends UseCase<void, LoginEntity> {
+class LoginWithEmailAndPasswordUseCase extends UseCase<void, LoginEntity> {
   final LoginRepo loginRepo;
 
-  LoginUseCase(this.loginRepo);
+  LoginWithEmailAndPasswordUseCase(this.loginRepo);
 
   @override
   Future<Either<Failuer, void>> call(LoginEntity params) async {
