@@ -75,7 +75,9 @@ class CustomFormLandscape extends StatelessWidget {
                 AccountStatusWidget(
                   text1: AppStrings.dontHaveAccount,
                   text2: AppStrings.signUp,
-                  onTap: () {},
+                  onTap: () {
+                    context.pushReplacementNamed(Routes.signUpView);
+                  },
                 ),
                 const Gap(20),
               ],
