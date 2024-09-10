@@ -1,6 +1,8 @@
+import 'package:car_wash_app/core/helpers/extension/navigation_extension.dart';
 import 'package:car_wash_app/core/helpers/functions/show_toast.dart';
 import 'package:car_wash_app/core/helpers/utils/app_strings.dart';
 import 'package:car_wash_app/core/helpers/utils/constants.dart';
+import 'package:car_wash_app/core/routes/routes.dart';
 import 'package:car_wash_app/core/widgets/account_status_widget.dart';
 import 'package:car_wash_app/core/widgets/custom_bottom.dart';
 import 'package:car_wash_app/core/widgets/my_text_form_field.dart';
@@ -73,7 +75,9 @@ class CustomFormLandscape extends StatelessWidget {
                 AccountStatusWidget(
                   text1: AppStrings.dontHaveAccount,
                   text2: AppStrings.signUp,
-                  onTap: () {},
+                  onTap: () {
+                    context.pushReplacementNamed(Routes.signUpView);
+                  },
                 ),
                 const Gap(20),
               ],
