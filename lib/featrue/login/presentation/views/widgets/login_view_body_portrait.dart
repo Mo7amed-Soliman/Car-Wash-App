@@ -26,9 +26,7 @@ class LoginViewBodyPortrait extends StatelessWidget {
           AccountStatusWidget(
             text1: AppStrings.dontHaveAccount,
             text2: AppStrings.signUp,
-            onTap: () {
-              context.pushReplacementNamed(Routes.signUpView);
-            },
+            onTap: () {},
           ),
         ],
       ),
