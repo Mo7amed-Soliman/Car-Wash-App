@@ -1,5 +1,7 @@
+import 'package:car_wash_app/core/helpers/extension/navigation_extension.dart';
 import 'package:car_wash_app/core/helpers/utils/app_strings.dart';
 import 'package:car_wash_app/core/helpers/utils/app_text_styles.dart';
+import 'package:car_wash_app/core/routes/routes.dart';
 import 'package:car_wash_app/featrue/login/presentation/views/widgets/remember_me_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +16,7 @@ class RememberMeAndForgotPassword extends StatelessWidget {
         const RememberMeWidget(),
         InkWell(
           onTap: () {
-            // Add your onTap functionality here
+            context.pushNamed(Routes.forgotPassword);
           },
           child: const Text(
             AppStrings.forgetPassword,

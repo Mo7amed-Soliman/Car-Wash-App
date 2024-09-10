@@ -1,4 +1,5 @@
 import 'package:car_wash_app/core/routes/routes.dart';
+import 'package:car_wash_app/featrue/forgot_password/presentation/views/forgot_password_view.dart';
 import 'package:car_wash_app/featrue/login/presentation/views/login_view.dart';
 import 'package:car_wash_app/featrue/splash/presentation/view/get_started_view.dart';
 import 'package:car_wash_app/featrue/splash/presentation/view/splash_view.dart';
@@ -9,5 +10,6 @@ Map<String, WidgetBuilder> get getRoutes {
     Routes.initialRoute: (context) => const SplashView(),
     Routes.onBoardingRoute: (context) => const GetStartedView(),
     Routes.loginView: (context) => const LoginView(),
+    Routes.forgotPassword: (context) => const ForgotPasswordView(),
   };
 }
